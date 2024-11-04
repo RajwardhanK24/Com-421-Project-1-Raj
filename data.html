@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Module - Research Paper Toolbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="files/icons/home.gif" alt="Home Icon" class="nav-icon">
+        <h1>Research Paper Toolbox - Data Module</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="data.html">Data</a></li>
+            <li><a href="placeholder.html">Topic</a></li>
+            <li><a href="placeholder.html">References</a></li>
+            <li><a href="placeholder.html">Style</a></li>
+            <li><a href="placeholder.html">Layout</a></li>
+            <li><a href="placeholder.html">Modality</a></li>
+            <li><a href="placeholder.html">Professionalization</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>How to Organize and Analyze Research Data</h2>
+        <p>This lesson is intended for students undertaking research projects, guiding them on formatting and analyzing research data using Excel and PASW (SPSS).</p>
+
+        <section>
+            <h3>Preparation Requirements</h3>
+            <ul>
+                <li>Microsoft Excel</li>
+                <li>PASW (SPSS) Statistics software or free trial</li>
+            </ul>
+            <aside>
+                <h4>Prerequisites</h4>
+                <p>Users should be familiar with Excel functions, descriptive and inferential statistics, and research design basics.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h3>Formatting Data for Analysis</h3>
+            <p>Follow these steps to format your raw data in Excel:</p>
+            <ul>
+                <li>Rename variables intuitively, ensuring each variable name is unique and starts with a letter.</li>
+                <li>Change categorical data to dichotomous format (e.g., change "female" to "F" and replace "Yes" with "1" and "No" with "0").</li>
+                <li>Separate combined data values into individual columns for easier analysis.</li>
+            </ul>
+            <img src="files/illustrations/datalesson_fig2.png" alt="Formatted Raw Data Example">
+            <aside>
+                <h4>Why Dichotomous Variables?</h4>
+                <p>Using 0/1 values allows for more flexibility in statistical analysis, making it easier to isolate specific characteristics for testing.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h3>Creating the Formatted Data Sheet</h3>
+            <p>Copy data from the "Raw_Dataset" sheet into a new sheet labeled "Formatted_Data". Organize data to simplify statistical testing.</p>
+            <img src="files/illustrations/datalesson_fig3.png" alt="Formatted Data Sheet Example">
+        </section>
+
+        <section>
+            <h3>Running Descriptive Statistics in Excel</h3>
+            <p>To run basic descriptive statistics, ensure the Analysis ToolPak is enabled in Excel, then use Data Analysis > Descriptive Statistics:</p>
+            <ol>
+                <li>Select the range of data (e.g., columns with perc_enjoy, perc_usefulness, etc.).</li>
+                <li>Output the summary statistics to a new sheet labeled "Descriptive_Stats".</li>
+            </ol>
+            <img src="files/illustrations/datalesson_fig4.png" alt="Descriptive Statistics Output Example">
+        </section>
+
+        <section>
+            <h3>Inferential Statistics with PASW</h3>
+            <p>To perform inferential statistics in PASW (SPSS), open the Formatted_Data sheet and run tests based on your research questions:</p>
+            <ul>
+                <li>Example: To test perc_usefulness across tutorial types, use the Kruskal-Wallis test under Nonparametric Tests > K Independent Samples.</li>
+            </ul>
+            <img src="files/illustrations/datalesson_fig6.png" alt="Kruskal-Wallis Test Setup">
+            <aside>
+                <h4>Choosing the Right Statistical Test</h4>
+                <p>Refer to resources like UCLA’s "Choosing the Correct Statistic" to ensure appropriate statistical methods are used.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h3>Exporting and Saving Results</h3>
+            <p>After completing your statistical tests, save the results in a report-friendly format (e.g., PDF or Word). This helps in maintaining data integrity and referencing.</p>
+            <img src="files/illustrations/datalesson_fig7.png" alt="Exporting Results Example">
+        </section>
+
+        <section>
+            <h3>Quiz</h3>
+            <p>Test your understanding of formatting and analyzing research data. Select the best answer for each question.</p>
+
+            <form id="dataQuizForm">
+                <h4>1. Which tool is recommended for running descriptive statistics in this lesson?</h4>
+                <label><input type="radio" name="q1" value="B"> B) Microsoft Excel</label><br>
+
+                <h4>2. Why are dichotomous variables (0/1 values) useful in data formatting?</h4>
+                <label><input type="radio" name="q2" value="D"> D) Both A and B</label><br>
+
+                <h4>3. What function in Excel should be enabled to run Descriptive Statistics?</h4>
+                <label><input type="radio" name="q3" value="B"> B) Analysis ToolPak</label><br>
+
+                <h4>4. Which test is suggested for comparing perc_usefulness across tutorial types in PASW?</h4>
+                <label><input type="radio" name="q4" value="C"> C) Kruskal-Wallis</label><br>
+
+                <h4>5. When exporting PASW results, which file types are recommended?</h4>
+                <label><input type="radio" name="q5" value="A"> A) Word or PDF</label><br><br>
+
+                <button type="button" onclick="checkDataQuiz()">Submit Quiz</button>
+            </form>
+
+            <p id="dataQuizResult"></p>
+
+            <script>
+                function checkDataQuiz() {
+                    const answers = { q1: "B", q2: "D", q3: "B", q4: "C", q5: "A" };
+                    let score = 0;
+                    for (const [question, answer] of Object.entries(answers)) {
+                        const selected = document.querySelector(`input[name="${question}"]:checked`);
+                        if (selected && selected.value === answer) {
+                            score++;
+                        }
+                    }
+                    document.getElementById("dataQuizResult").textContent = `You scored ${score} out of ${Object.keys(answers).length}`;
+                }
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Research Paper Toolbox</p>
+    </footer>
+</body>
+</html>

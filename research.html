@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Module - Research Paper Toolbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Research Paper Toolbox - Research Module</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="data.html">Data</a></li>
+            <li><a href="placeholder.html">Topic</a></li>
+            <li><a href="placeholder.html">References</a></li>
+            <li><a href="placeholder.html">Style</a></li>
+            <li><a href="placeholder.html">Layout</a></li>
+            <li><a href="placeholder.html">Modality</a></li>
+            <li><a href="placeholder.html">Professionalization</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Realistic Research: University, Web-based, and Local Resources</h2>
+        <p>This lesson is designed to help students beginning research in their first semester acquire effective research skills. Learn strategies to access resources through the following areas:</p>
+
+        <section>
+            <h3>Getting Started</h3>
+            <p>Learn how to access IIT library services and navigate the IIT library website.</p>
+            <img src="files/illustrations/research2.jpg" alt="Library Services Icon">
+            <p>Using myIIT allows a proxy connection, enabling access to most resources without reentering login information.</p>
+        </section>
+
+        <section>
+            <h3>Research Timelines</h3>
+            <p>Formulate realistic timelines for your research projects, considering resource availability and deadlines.</p>
+            <aside>
+                <h4>Being Realistic</h4>
+                <p>Don't assume you can read an entire book in one day. Set realistic goals to avoid overloading yourself.</p>
+            </aside>
+            <p>Consider factors like the time to obtain, read, and integrate resources into your project.</p>
+        </section>
+
+        <section>
+            <h3>Requesting Resources</h3>
+            <p>Instructions on how to request articles and books through I-Share and MyILL.</p>
+            <img src="files/illustrations/research4_image1.jpg" alt="Requesting Resources Interface">
+        </section>
+
+        <section>
+            <h3>Local Libraries</h3>
+            <p>Explore options for accessing resources at local libraries, such as the Chicago Public Library and I-Share affiliated libraries.</p>
+            <aside>
+                <h4>Being Realistic</h4>
+                <p>Check library hours and policies before making a trip to avoid wasted time.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h3>Finding Resources on the Web</h3>
+            <p>Overview of web resources like Google Scholar, Google Books, and Web of Science for research.</p>
+            <aside>
+                <h4>Being Realistic</h4>
+                <p>If you're stuck, try searching for special issues or edited volumes related to your topic.</p>
+            </aside>
+        </section>
+
+        <section>
+            <h3>Quiz</h3>
+            <p>Test your understanding of the Research Module. Select the best answer for each question.</p>
+
+            <form id="researchQuizForm">
+                <h4>1. Which service allows proxy server access to library resources?</h4>
+                <label><input type="radio" name="q1" value="c"> C) myIIT</label><br>
+
+                <h4>2. Why is it important to create a realistic research timeline?</h4>
+                <label><input type="radio" name="q2" value="d"> D) All of the above</label><br>
+
+                <h4>3. Which tool can help you find books and articles at other libraries?</h4>
+                <label><input type="radio" name="q3" value="a"> A) I-Share</label><br>
+
+                <h4>4. Which online platform is recommended for finding academic articles?</h4>
+                <label><input type="radio" name="q4" value="b"> B) Web of Science</label><br><br>
+
+                <button type="button" onclick="checkResearchQuiz()">Submit Quiz</button>
+            </form>
+
+            <p id="researchQuizResult"></p>
+
+            <script>
+                function checkResearchQuiz() {
+                    const answers = { q1: "c", q2: "d", q3: "a", q4: "b" };
+                    let score = 0;
+                    for (const [question, answer] of Object.entries(answers)) {
+                        const selected = document.querySelector(`input[name="${question}"]:checked`);
+                        if (selected && selected.value === answer) {
+                            score++;
+                        }
+                    }
+                    document.getElementById("researchQuizResult").textContent = `You scored ${score} out of ${Object.keys(answers).length}`;
+                }
+            </script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Research Paper Toolbox</p>
+    </footer>
+</body>
+</html>
